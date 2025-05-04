@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>{% block title %}Commo{% endblock %}</title>
+        {% block head %}{% endblock %}
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        {% include "partials/_navbar.html" %}  <!-- Navbar Importado -->
+        {% include "partials/_header.html" %}  <!-- Header Importado -->
+
+        <main class="flex-fill">
+            {% block content %}{% endblock %}
+        </main>
+
+        {% include "partials/_footer.html" %}  <!-- Footer Importado -->
+    </body>
+</html>
