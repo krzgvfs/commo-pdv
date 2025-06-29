@@ -11,7 +11,9 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "backend": "cd .. && python3 manage.py runserver",
+    "commo": "concurrently \"npm run dev\" \"npm run backend\""
   },
   "dependencies": {
     "pinia": "^3.0.3",
