@@ -3,9 +3,11 @@ from rest_framework import serializers
 
 
 class UserSerializer(serializers.ModelSerializer):
+    groups = serializers.StringRelatedField(many=True, read_only=True)
+
     class Meta:
         model = User
-        fields = ('username', 'password', 'email')
+        fields = ('id', 'username', 'email', 'password', 'groups')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
